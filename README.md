@@ -9,7 +9,8 @@ composer require albertcht/lumen-console:dev-master
 ```
 
 * Add service provider
-```
+
+```php
 $app->register(AlbertCht\Lumen\Console\ConsoleServiceProvider::class);
 ```
 
