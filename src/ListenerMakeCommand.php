@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Console;
+namespace AlbertCht\Lumen\Console;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
