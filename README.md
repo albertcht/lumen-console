@@ -1,6 +1,6 @@
 # Lumen Console
 
-A Lumen package for missing Laravel console commands.
+A Lumen package for missing Laravel artisan commands.
 
 ## Installation
 
