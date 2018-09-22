@@ -90,10 +90,10 @@ class KeyGenerateCommand extends Command
      */
     protected function writeNewEnvironmentFileWith($key)
     {
-        file_put_contents($this->laravel->environmentFilePath(), preg_replace(
+        file_put_contents($this->envPath(), preg_replace(
             $this->keyReplacementPattern(),
             'APP_KEY='.$key,
-            file_get_contents($this->laravel->environmentFilePath())
+            file_get_contents($this->envPath())
         ));
     }
 
@@ -107,5 +107,19 @@ class KeyGenerateCommand extends Command
         $escaped = preg_quote('='.$this->laravel['config']['app.key'], '/');
 
         return "/^APP_KEY{$escaped}/m";
+    }
+
+    /**
+     * Get the .env file path.
+     *
+     * @return string
+     */
+    protected function envPath()
+    {
+        if (method_exists($this->laravel, 'environmentFilePath')) {
+            return $this->laravel->environmentFilePath();
+        }
+
+        return $this->laravel->basePath('.env');
     }
 }
