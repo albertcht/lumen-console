@@ -4,7 +4,7 @@
     "keywords": ["lumen", "laravel", "commands", "console"],
     "type": "library",
     "require": {
-        "illuminate/support": "~5",
+        "illuminate/support": "~5 || ~6",
         "php": ">=5.6"
     },
     "require-dev": {
